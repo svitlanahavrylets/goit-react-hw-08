@@ -1,0 +1,35 @@
+.headerContainer {
+  background-color: #2a465c;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pageNav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 16px;
+}
+.menuLink {
+  background-color: #fff;
+  color: #2a465c;
+  border: 1px solid #2a465c;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 20px;
+}
+.menuLink:hover,
+.menuLink:focus,
+.menuLink:active {
+  background-color: #316d92;
+  color: #fff;
+}
+.active {
+  background-color: #316d92;
+  color: #fff;
+  border-color: #316d92;
+}

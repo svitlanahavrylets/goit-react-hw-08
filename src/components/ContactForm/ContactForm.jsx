@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
+import toast from "react-hot-toast";
 
 const INITIAL_VALUES = {
   name: "",
@@ -22,14 +23,13 @@ const ContactValidationSchema = Yup.object().shape({
 });
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const handleSubmit = (values, actions) => {
-    dispatch(
-      addContact({
-        name: values.name,
-        number: values.number,
-      })
-    );
 
+  const handleSubmit = (contact, actions) => {
+    dispatch(addContact(contact))
+      .unwrap()
+      .then(() => {
+        toast.success("Contact added successfully");
+      });
     actions.resetForm();
   };
   return (

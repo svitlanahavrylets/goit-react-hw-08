@@ -9,11 +9,17 @@ const UserMenu = () => {
 
   return (
     <div className={css.wrapper}>
-      <div>
-        <p className={css.username}>Hello, {user.name}</p>
-        <p className={css.email}>Email: {user.email}</p>
+      <div className={css.userInform}>
+        <p>
+          Hello, <span className={css.username}>{user.name}</span>!
+        </p>
+        <p className={css.email}>{user.email}</p>
       </div>
-      <button type="button" onClick={() => dispatch(apiLogout())}>
+      <button
+        className={css.btnLogOut}
+        type="button"
+        onClick={() => dispatch(apiLogout())}
+      >
         Log Out
       </button>
     </div>

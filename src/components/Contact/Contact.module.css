@@ -10,7 +10,7 @@
   align-items: start;
   max-height: 200px;
   gap: 8px;
-  box-shadow: 0 0 8px rgba(206, 17, 105, 0.5);
+  box-shadow: 0 0 8px #ce116980;
   transition: box-shadow 0.3s ease;
 }
 p {
@@ -30,7 +30,7 @@ p {
 }
 .deleteBtn:hover,
 .deleteBtn:focus {
-  background-color: rgb(206, 17, 105);
+  background-color: hsl(332, 85%, 44%);
   border-color: rgb(206, 17, 105);
 }
 .number,

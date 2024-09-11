@@ -33,51 +33,53 @@ const ContactForm = () => {
     actions.resetForm();
   };
   return (
-    <Formik
-      initialValues={INITIAL_VALUES}
-      onSubmit={handleSubmit}
-      validationSchema={ContactValidationSchema}
-    >
-      {({ errors }) => (
-        <Form className={css.form}>
-          <label className={css.label}>
-            <span className={css.name}>Name</span>
-            <Field
-              className={css.field}
-              type="text"
-              name="name"
-              placeholder=""
-            />
-            <ErrorMessage
-              className={css.errorText}
-              name="name"
-              component="span"
-            />
-          </label>
-          <label className={css.label}>
-            <span className={css.number}>Phone</span>
-            <Field
-              className={css.field}
-              type="tel"
-              name="number"
-              placeholder=""
-            />
-            <ErrorMessage
-              className={css.errorText}
-              name="number"
-              component="span"
-            />
-          </label>
-          <button
-            className={css.btnAddContact}
-            disabled={Object.keys(errors).length > 0}
-            type="submit"
-          >
-            Add contact
-          </button>
-        </Form>
-      )}
-    </Formik>
+    <div className={css.containerContactForm}>
+      <Formik
+        initialValues={INITIAL_VALUES}
+        onSubmit={handleSubmit}
+        validationSchema={ContactValidationSchema}
+      >
+        {({ errors }) => (
+          <Form className={css.form}>
+            <label className={css.label}>
+              <span className={css.name}>Name</span>
+              <Field
+                className={css.field}
+                type="text"
+                name="name"
+                placeholder=""
+              />
+              <ErrorMessage
+                className={css.errorText}
+                name="name"
+                component="span"
+              />
+            </label>
+            <label className={css.label}>
+              <span className={css.number}>Phone</span>
+              <Field
+                className={css.field}
+                type="tel"
+                name="number"
+                placeholder=""
+              />
+              <ErrorMessage
+                className={css.errorText}
+                name="number"
+                component="span"
+              />
+            </label>
+            <button
+              className={css.btnAddContact}
+              disabled={Object.keys(errors).length > 0}
+              type="submit"
+            >
+              Add contact
+            </button>
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
 };
 

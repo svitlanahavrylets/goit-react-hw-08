@@ -1,7 +1,9 @@
+import Title from "../../components/Title/Title";
+
 const HomePage = () => {
   return (
     <div>
-      <h1 className="title">Phonebook</h1>
+      <Title />
     </div>
   );
 };

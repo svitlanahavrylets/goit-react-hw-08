@@ -4,34 +4,26 @@ import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { selectAuthIsLoggedIn } from "../../redux/auth/selectors";
 
+export const buildLinkClass = ({ isActive }) => {
+  return clsx(css.menuLink, isActive && css.active);
+};
+
 const Navigation = () => {
   const isLoggedIn = useSelector(selectAuthIsLoggedIn);
 
   return (
-    <div>
-      <nav>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            clsx(css.menuLink, isActive && css.active)
-          }
-        >
-          Home
-        </NavLink>
-        {isLoggedIn && (
-          <>
-            <NavLink
-              to="/contacts"
-              className={({ isActive }) =>
-                clsx(css.menuLink, isActive && css.active)
-              }
-            >
-              Contacts
-            </NavLink>
-          </>
-        )}
-      </nav>
-    </div>
+    <nav className={css.headerNav}>
+      <NavLink to="/" className={buildLinkClass}>
+        Home
+      </NavLink>
+      {isLoggedIn && (
+        <>
+          <NavLink to="/contacts" className={buildLinkClass}>
+            Contacts
+          </NavLink>
+        </>
+      )}
+    </nav>
   );
 };
 

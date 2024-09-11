@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  gap: 20px;
+  color: #ffffff;
+  text-align: right;
+}
+.btnLogOut {
+  color: #5abd8c;
+  border-radius: 15px;
+  width: 135px;
+  height: 62px;
+  overflow: hidden;
+  font-size: 20px;
+}
+.btnLogOut:hover,
+.btnLogOut:focus {
+  background-color: #0582a8;
+  color: #ffffff;
+}
+.username {
+  color: #ce116980;
+}
+.userInform {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  /* gap: 8px; */
+}

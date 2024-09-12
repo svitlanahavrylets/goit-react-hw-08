@@ -4,19 +4,22 @@ import ContactList from "../../components/ContactList/ContactList";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contacts/operations";
-import toast from "react-hot-toast";
+import css from "./ContactsPage.module.css";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(fetchContacts())
-      .unwrap()
-      .then(() => toast.success("Contacts loaded successfully"));
+    dispatch(fetchContacts());
   }, [dispatch]);
+
   return (
     <div>
-      <ContactForm />
-      <SearchBox />
+      <div className={css.wrapper}>
+        <ContactForm />
+        <SearchBox />
+      </div>
+
       <ContactList />
     </div>
   );

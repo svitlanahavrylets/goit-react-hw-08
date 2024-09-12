@@ -1,0 +1,33 @@
+.textWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.btnWrapper {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+.cancelBtn {
+  border: 1px solid rgb(5, 130, 168);
+  border-radius: 8px;
+  font-size: 18px;
+}
+.cancelBtn:hover,
+.cancelBtn:focus {
+  background-color: rgb(5, 130, 168);
+  border-color: rgb(5, 130, 168);
+  color: #fff;
+}
+
+.logOutBtn {
+  border: 1px solid rgb(206, 17, 105);
+  border-radius: 8px;
+  font-size: 18px;
+}
+.logOutBtn:hover,
+.logOutBtn:focus {
+  background-color: rgb(206, 17, 105);
+  border-color: rgb(206, 17, 105);
+  color: #fff;
+}

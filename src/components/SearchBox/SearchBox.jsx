@@ -13,15 +13,17 @@ function SearchBox() {
   };
 
   return (
-    <div className={css.inputFindForm}>
-      <p className={css.inputTitle}>Find contacts by name</p>
-      <input
-        className={css.input}
-        type="text"
-        placeholder=""
-        value={value}
-        onChange={handleFilter}
-      />
+    <div className={css.containerContactForm}>
+      <div className={css.inputFindForm}>
+        <p className={css.inputTitle}>Find contacts by name</p>
+        <input
+          className={css.input}
+          type="text"
+          placeholder="type..."
+          value={value}
+          onChange={handleFilter}
+        />
+      </div>
     </div>
   );
 }

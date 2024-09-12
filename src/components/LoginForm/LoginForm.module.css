@@ -1,0 +1,62 @@
+.containerContactForm {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  border: 2px solid rgb(5, 130, 168);
+  border-radius: 15px;
+  padding: 36px;
+  max-width: 400px;
+}
+.btnAddContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid rgb(5, 130, 168);
+  margin: 0 auto;
+  border-radius: 15px;
+  width: 135px;
+  height: 62px;
+  overflow: hidden;
+  font-size: 18px;
+}
+.btnAddContact:hover,
+.btnAddContact:focus {
+  background-color: rgb(5, 130, 168);
+  border-color: rgb(5, 130, 168);
+  outline: none;
+  color: #fff;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+  color: rgb(5, 130, 168);
+}
+.errorText {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: red;
+}
+.label :hover,
+.label :focus {
+  border-color: rgb(5, 130, 168);
+  border-radius: 4px;
+  outline: none;
+}
+.field {
+  border-radius: 8px;
+  border-color: rgb(5, 130, 168);
+}
+.field:hover,
+.field:focus-visible {
+  border-color: rgb(86, 196, 230);
+  border-radius: 8px;
+}

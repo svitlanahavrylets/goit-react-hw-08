@@ -13,12 +13,18 @@ const Navigation = () => {
 
   return (
     <nav className={css.headerNav}>
-      <NavLink to="/" className={buildLinkClass}>
+      <NavLink
+        to="/"
+        className={({ isActive }) => buildLinkClass({ isActive })}
+      >
         Home
       </NavLink>
       {isLoggedIn && (
         <>
-          <NavLink to="/contacts" className={buildLinkClass}>
+          <NavLink
+            to="/contacts"
+            className={({ isActive }) => buildLinkClass({ isActive })}
+          >
             Contacts
           </NavLink>
         </>

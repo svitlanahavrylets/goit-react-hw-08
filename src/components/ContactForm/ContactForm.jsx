@@ -27,9 +27,8 @@ const ContactForm = () => {
   const handleSubmit = (contact, actions) => {
     dispatch(addContact(contact))
       .unwrap()
-      .then(() => {
-        toast.success("Contact added successfully");
-      });
+      .then(() => toast.success("Contact added successfully!"))
+      .catch((error) => toast.error(error.message));
     actions.resetForm();
   };
   return (
@@ -47,7 +46,7 @@ const ContactForm = () => {
                 className={css.field}
                 type="text"
                 name="name"
-                placeholder=""
+                placeholder="Enter your name..."
               />
               <ErrorMessage
                 className={css.errorText}
@@ -61,7 +60,7 @@ const ContactForm = () => {
                 className={css.field}
                 type="tel"
                 name="number"
-                placeholder=""
+                placeholder="xxx-xx-xx"
               />
               <ErrorMessage
                 className={css.errorText}

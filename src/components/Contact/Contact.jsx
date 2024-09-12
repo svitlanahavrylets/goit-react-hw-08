@@ -12,20 +12,20 @@ function Contact({ id, name, number }) {
   const onDeleteContact = (id) => {
     dispatch(deleteContact(id))
       .unwrap()
-      .then(() => {
-        toast.success("Contact deleted successfully");
-      });
+      .then(() => toast.success("Contact deleted successfully"))
+      .catch((error) => toast.error(error.message));
   };
   return (
-    <div key={id} className={css.contactList}>
-      <p className={css.name}>
+    <div key={id}>
+      <div className={css.wrapper}>
         <IoPersonSharp />
-        {name}
-      </p>
-      <p className={css.number}>
+        <h3>{name}</h3>
+      </div>
+      <div className={css.wrapper}>
         <FaPhoneAlt />
-        {number}
-      </p>
+        <p>{number}</p>
+      </div>
+
       <button
         onClick={() => onDeleteContact(id)}
         type="button"

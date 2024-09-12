@@ -4,7 +4,6 @@
 }
 .menuLink {
   color: #fff;
-  /* padding: 10px 20px; */
   cursor: pointer;
   font-size: 20px;
   display: flex;
@@ -13,19 +12,10 @@
   width: 135px;
   height: 62px;
 }
-/* .menuLink:hover,
-.menuLink:focus,
-.menuLink:active {
-  background-color: #316d92;
-  color: #fff;
-} */
 .active {
-  /* background-color: #316d92; */
   color: #fff;
-  /* border-color: #316d92; */
   border: 2px solid #fff;
   border-radius: 15px;
-  /* padding: 10px; */
-  width: 135px;
+   width: 135px;
   height: 62px;
 }

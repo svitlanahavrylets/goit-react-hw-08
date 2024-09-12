@@ -25,7 +25,23 @@ function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <p>User is refreshing, please wait</p>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        margin: 0,
+      }}
+    >
+      <p
+        style={{
+          textAlign: "center",
+        }}
+      >
+        User is refreshing, please wait
+      </p>
+    </div>
   ) : (
     <Layout>
       <Routes>

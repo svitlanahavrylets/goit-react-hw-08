@@ -4,6 +4,7 @@ import css from "./RegistrationForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { apiRegister } from "../../redux/auth/operations";
 import { selectAuthError } from "../../redux/auth/selectors";
+import ErrorMessageComp from "../ErrorMessageComp/ErrorMessageComp";
 
 const RegistrationValidationSchema = Yup.object().shape({
   name: Yup.string()
@@ -27,73 +28,73 @@ const RegistrationForm = () => {
     password: "",
   };
   const handleSubmit = (values, actions) => {
-    console.log(values);
-
     dispatch(apiRegister(values));
 
     actions.resetForm();
   };
   return (
-    <Formik
-      initialValues={INITIAL_VALUES}
-      onSubmit={handleSubmit}
-      validationSchema={RegistrationValidationSchema}
-    >
-      {({ errors }) => (
-        <Form className={css.form}>
-          <label className={css.label}>
-            <span className={css.name}>Name</span>
-            <Field
-              className={css.field}
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-            />
-            <ErrorMessage
-              className={css.errorText}
-              name="name"
-              component="span"
-            />
-          </label>
-          <label className={css.label}>
-            <span className={css.number}>E-mail</span>
-            <Field
-              className={css.field}
-              type="text"
-              name="email"
-              placeholder="example@gmail.com"
-            />
-            <ErrorMessage
-              className={css.errorText}
-              name="email"
-              component="span"
-            />
-          </label>
-          <label className={css.label}>
-            <span className={css.number}>Password</span>
-            <Field
-              className={css.field}
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-            />
-            <ErrorMessage
-              className={css.errorText}
-              name="number"
-              component="password"
-            />
-          </label>
-          <button
-            className={css.btnAddContact}
-            disabled={Object.keys(errors).length > 0}
-            type="submit"
-          >
-            Sign up
-          </button>
-          {error && <p>Oops, some error occured... {error}</p>}
-        </Form>
-      )}
-    </Formik>
+    <div className={css.containerContactForm}>
+      <Formik
+        initialValues={INITIAL_VALUES}
+        onSubmit={handleSubmit}
+        validationSchema={RegistrationValidationSchema}
+      >
+        {({ errors }) => (
+          <Form className={css.form}>
+            <label className={css.label}>
+              <span className={css.name}>Name</span>
+              <Field
+                className={css.field}
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+              />
+              <ErrorMessage
+                className={css.errorText}
+                name="name"
+                component="span"
+              />
+            </label>
+            <label className={css.label}>
+              <span className={css.number}>E-mail</span>
+              <Field
+                className={css.field}
+                type="text"
+                name="email"
+                placeholder="example@gmail.com"
+              />
+              <ErrorMessage
+                className={css.errorText}
+                name="email"
+                component="span"
+              />
+            </label>
+            <label className={css.label}>
+              <span className={css.number}>Password</span>
+              <Field
+                className={css.field}
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+              />
+              <ErrorMessage
+                className={css.errorText}
+                name="number"
+                component="password"
+              />
+            </label>
+            <button
+              className={css.btnAddContact}
+              disabled={Object.keys(errors).length > 0}
+              type="submit"
+            >
+              Sign up
+            </button>
+            {error && <ErrorMessageComp />}
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
 };
 
